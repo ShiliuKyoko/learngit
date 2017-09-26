@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A AWESOME WEB !</title>
+    <link rel="stylesheet" href="css/semantic.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="js/semantic.js"></script>
+    <!-- <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script> -->
+    <!-- <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script> -->
+    <!-- <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script> -->
+    <script src="js/highcharts.js"></script>
+    <script src="js/exporting.js"></script>
+    <script src="js/highcharts-more.js"></script>
+
+
+  </head>
+  <body>
+    <div class="ui sidebar thin inverted vertical menu">
+      <div class="header item">
+        <img src="images/logo2.png" alt="">
+      </div>
+      <a class="item">
+        Documents
+        <i class="browser icon"></i>
+      </a>
+      <a class="item">
+        Comment
+        <i class="comment icon"></i>
+      </a>
+      <a class="item">
+        Others
+        <i class="tags icon"></i>
+      </a>
+
+    </div>
+    <div class="pusher">
+      <div class="ui menu">
+        <div class="header item" id="menu">
+          Menu
+        <i class="content icon"></i>
+        </div>
+        <a class="item">About Us</a>
+        <a class="item">Job</a>
+        <a class="item">Locations</a>
+      </div>
+
+  <div class="ui equal width grid" style="width:60%;margin:5px 5px 5px 5px;">
+  <div class="row">
+    <div class="column">
+      <div class="ui blue segment">
+        <div class="ui statistic">
+          <div class="value">
+            50,000
+          </div>
+          <div class="label">
+            Document
+          </div>
+        </div>
+        </div>
+    </div>
+    <div class="column">
+      <div class="ui red segment">
+        <div class="ui statistic">
+          <div class="value">
+            2,000
+          </div>
+          <div class="label">
+            Views
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <div class="ui yellow segment">
+        <div class="ui divided items">
+          <div class="item">
+            <div class="content">
+              <div class="header">
+                Title Here!
+              </div>
+              <div class="description">
+                Say something!
+              </div>
+              <div class="extra">
+                <div class="ui label">
+                  TAG1
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<div class="ui divided"></div>
+  <div class="ui equal width grid" style="width:60%;margin:5px 5px 5px 5px;">
+    <div class="row">
+      <div class="column">
+        <div class="ui container segment">
+          <div class="ui compact menu">
+            <div class="ui simple dropdown item">
+              Area
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <div class="item" id="i1">Choice 1</div>
+                <div class="item" id="i2">Choice 1</div>
+                <div class="item" id="i3">Choice 1</div>
+              </div>
+            </div>
+          </div>
+          <div class="ui container" id="container">
+            <!-- <div id="container" style="min-width:400px;height:400px"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+            <div class="ui pagination menu">
+              <a class="item" href="#"> < </a>
+              <div class="disable item">
+                page 1 of 3
+              </div>
+              <a class="item" href="#"> > </a>
+            </div>
+        </div>
+
+<script>
+$('#menu').click(function () {
+  $('.ui.sidebar').sidebar('toggle');
+});
+</script>
+
+<script>
+$('#i1').click(function () {
+  var chart = new Highcharts.Chart('container', {
+  title: {
+      text: '不同城市的月平均气温',
+      x: -20
+  },
+  subtitle: {
+      text: '数据来源: WorldClimate.com',
+      x: -20
+  },
+  xAxis: {
+      categories: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+  },
+  yAxis: {
+      title: {
+          text: '温度 (°C)'
+      },
+      plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+      }]
+  },
+  tooltip: {
+      valueSuffix: '°C'
+  },
+  legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      borderWidth: 0
+  },
+  series: [{
+      name: '东京',
+      data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+  }, {
+      name: '纽约',
+      data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+  }, {
+      name: '柏林',
+      data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+  }, {
+      name: '伦敦',
+      data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+  }]
+  });
+});
+
+</script>
+
+<script>
+$('#i2').click(function () {
+  var chart = new Highcharts.Chart('container', {
+  title: {
+      text: '不同城市的月平均气温',
+      x: -20
+  },
+  subtitle: {
+      text: '数据来源: WorldClimate.com',
+      x: -20
+  },
+  xAxis: {
+      categories: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+  },
+  yAxis: {
+      title: {
+          text: '温度 (°C)'
+      },
+      plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+      }]
+  },
+  tooltip: {
+      valueSuffix: '°C'
+  },
+  legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      borderWidth: 0
+  },
+  series: [{
+      name: '东京',
+      data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+  }, {
+      name: '纽约',
+      data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+  }, {
+      name: '柏林',
+      data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+  }, {
+      name: '伦敦',
+      data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+  }]
+  });
+});
+
+</script>
+
+<script>
+$('#i3').click(function () {
+  var chart = new Highcharts.Chart('container', {
+  title: {
+      text: '不同城市的月平均气温',
+      x: -20
+  },
+  subtitle: {
+      text: '数据来源: WorldClimate.com',
+      x: -20
+  },
+  xAxis: {
+      categories: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+  },
+  yAxis: {
+      title: {
+          text: '温度 (°C)'
+      },
+      plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+      }]
+  },
+  tooltip: {
+      valueSuffix: '°C'
+  },
+  legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      borderWidth: 0
+  },
+  series: [{
+      name: '上海',
+      data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+  }, {
+      name: '日本',
+      data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+  }, {
+      name: '南京',
+      data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+  }, {
+      name: '飞机',
+      data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+  }]
+  });
+});
+
+</script>
+
+  </body>
+</html>
