@@ -10,9 +10,9 @@ pig = client['Pig']
 second_info = pig['third_info_bj']
 
 
-# req = requests.get('http://58.240.51.118/getPassword_cu.jsp?command=getpassword&phonenumber=jsltlanschool_18652961653&t=0.5308168062467711')
-# soup = BeautifulSoup(req.text,'lxml')
-# print(soup.get_text)
+req = requests.get('http://58.240.51.118/getPassword_cu.jsp?command=getpassword&phonenumber=jsltlanschool_18652961653&t=0.5308168062467711')
+soup = BeautifulSoup(req.text,'lxml')
+print(soup.get_text)
 
 
 
@@ -76,5 +76,7 @@ if __name__ == '__main__':
     # f = s
 
 print('All infos load complete!')
+
+
 
 'http://ditu.amap.com/search?query='

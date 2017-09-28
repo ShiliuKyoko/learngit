@@ -13,7 +13,7 @@ class Blong(Document):
     landlord_url = StringField()
     detail_url = StringField()
 
-    meta = {'collection':'second_info'}
+    meta = {'collection':'third_info_bj'}
 
 # for i in Blong.objects[:1]:
 #     print(i.tittle)
