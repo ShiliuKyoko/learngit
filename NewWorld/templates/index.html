@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>First Test!</title>
+    <link rel="stylesheet" href="{% static 'css/semantic.css' %}">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="{% static 'js/semantic.js' %}"></script>
+  </head>
+  <body>
+    <div class="ui thin sidebar left vertical inverted menu" id="sidebar">
+      <div class="item">
+        <img src="{% static 'images/logo2.png' %}">
+      </div>
+      <div class="item">
+        Doucument
+        <i class="content icon"></i>
+      </div>
+      <div class="item">
+        Options
+        <i class="options icon"></i>
+      </div>
+      <div class="item">
+        Others
+        <i class="browser icon"></i>
+      </div>
+    </div>
+  <div class="pusher">
+    <div class="ui menu">
+      <div class="header item" id="menu">
+        <i class="browser icon"></i>
+        Menu
+      </div>
+      <div class="item">
+        <i class="bar chart icon"
+        ></i>
+        Charts
+      </div>
+      <div class="item">
+        <i class="idea icon"></i>
+        Others
+      </div>
+    </div>
+
+
+    <div class="ui container segment">
+        {%  for i in info %}
+      <div class="ui item">
+        <a href="{{ i.detail_url }}" target="view_window"><h2 class="ui header">{{ i.tittle }}</h2></a>
+          <br>
+          <a href="http://ditu.amap.com/search?query={{ i.address }}" target="view_window"><h3>{{ i.address }}</h3></a>
+          <br>
+        <a href="{{ i.landlord_url }}" target="view_window"><h4>{{ i.lanlord_name }}</h4></a>
+      </div>
+    <div class="ui divider"></div>
+        {% endfor %}
+
+      <div class="ui pagination menu">
+          {% if info.has_previous %}
+        <a class="item" href="?page={{ info.previous_page_number }}"> < </a>
+          {% endif %}
+        <div class="disable item">
+           {{ info.number }} of {{ info.paginator.num_pages }}
+        </div>
+      {% if info.has_next %}
+        <a class="item" href="?page={{ info.next_page_number }}"> > </a>
+      {% endif %}
+      </div>
+    </div>
+
+
+  </div>
+  <script>
+    $('#menu').click(function(){
+      $('#sidebar').sidebar('toggle')
+    });
+  </script>
+
+  </body>
+</html>
