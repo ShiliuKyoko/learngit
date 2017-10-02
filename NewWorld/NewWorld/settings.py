@@ -24,7 +24,7 @@ SECRET_KEY = 'q*37ab+ng9*z%an@!1t-e^6*sse6z+fa-4%*r#2e-)k#5$hc!0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','.relzhao.ink','127.0.0.1','relzhao.ink','39.108.131.90']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','.relzhao.ink','relzhao.ink','39.108.131.90']
 
 # Application definition
 
@@ -97,6 +97,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

@@ -10,9 +10,9 @@ pig = client['Pig']
 second_info = pig['third_info_bj']
 
 
-req = requests.get('http://58.240.51.118/getPassword_cu.jsp?command=getpassword&phonenumber=jsltlanschool_18652961653&t=0.5308168062467711')
-soup = BeautifulSoup(req.text,'lxml')
-print(soup.get_text)
+# req = requests.get('http://58.240.51.118/getPassword_cu.jsp?command=getpassword&phonenumber=jsltlanschool_18652961653&t=0.5308168062467711')
+# soup = BeautifulSoup(req.text,'lxml')
+# print(soup.get_text)
 
 
 
@@ -72,7 +72,8 @@ class Spider(object):
 
 
 if __name__ == '__main__':
-    s = Spider().get_each_index_url('bj')
+    area = input('Please enter the city you want to query (just like that 北京 = bj or 南京 = nj):')
+    s = Spider().get_each_index_url(area)
     # f = s
 
 print('All infos load complete!')
